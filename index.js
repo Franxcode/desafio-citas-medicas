@@ -15,9 +15,7 @@ const main = async () => {
 	});
 
 	app.get("/", (req, res) => {
-		res.send(
-			_.map(users, (value, index) => `<ol>${index + 1}. Nombre: ${value.name} - Apellido: ${value.last} - ID: ${uuidv4()} - Timestamp: ${moment().format("MMMM Do YYYY, h:mm:ss a")}</ol>`).join("")
-		);
+		res.send(_.map(users, (value, index) => `<ol>${index + 1}. Nombre: ${value.name} - Apellido: ${value.last} - ID: ${value.id} - Timestamp: ${value.timestamp}</ol>`).join(""));
 	});
 
 	app.listen(port, () => {
