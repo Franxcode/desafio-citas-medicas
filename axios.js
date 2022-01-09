@@ -12,7 +12,6 @@ async function api() {
 				inc: "name",
 			},
 		});
-		// ID: ${uuidv4()} - Timestamp: ${moment().format("MMMM Do YYYY, h:mm:ss a")
 		const resp = await instance.get();
 
 		return resp.data.results.map((user) => ({

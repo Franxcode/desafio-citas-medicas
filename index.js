@@ -1,6 +1,4 @@
 const express = require("express");
-const moment = require("moment");
-const { v4: uuidv4 } = require("uuid");
 const colors = require("colors");
 const _ = require("lodash");
 const { api } = require("./axios");
@@ -11,7 +9,7 @@ const port = 3000;
 const main = async () => {
 	const users = await api();
 	_.forEach(users, (value) => {
-		console.log(`Nombre: ${value.name} - Apellido: ${value.last} - ID: ${uuidv4()} - Timestamp: ${moment().format("MMMM Do YYYY, h:mm:ss a")}`.bgWhite.blue);
+		console.log(`Nombre: ${value.name} - Apellido: ${value.last} - ID: ${value.id} - Timestamp: ${value.timestamp}`.bgWhite.blue);
 	});
 
 	app.get("/", (req, res) => {
